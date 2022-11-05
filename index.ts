@@ -1,18 +1,26 @@
-import clientClass from './clientClass'
+import clientClass from './AccountsManagement/clientClass'
  
-const checkingAccount1 =  clientClass.prototype.createCheckingAccount(1, 490001, 'CommonBank', 0);
-
 const client1 = new clientClass(
     'María',
     'Gonzalez',
-    27000,
-    checkingAccount1
+    27000
 );
 
-console.log(client1);
+client1.createCheckingAccount(1, 49000, 'Common Bank', 1000);
+client1.createSaveAccount(1, 79000, 'Common Save Bank', 1000)
+
+client1.saveAccount.withdraw(200)
+
+client1.account.withdraw(200)
+client1.account.checkAccount()
 
 
 
 
+const client2 = new clientClass(
+    'Leandro',
+    'Gado',
+    27001
+)
 
 
