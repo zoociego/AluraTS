@@ -39,7 +39,7 @@ class Account {
     withdraw(value: number): number {
         if(value <= this.check) {
             this.type === 'Checking Account' ?
-                taxes.checkAccountTax(value) :
+                value = taxes.checkAccountTax(value) :
                 value
             return this.check -= value;
         }
