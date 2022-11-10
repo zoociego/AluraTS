@@ -1,5 +1,4 @@
 //Generics 
-
 interface maria {
     name: string
 }
