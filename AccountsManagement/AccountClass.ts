@@ -7,11 +7,11 @@ namespace taxes {
     }
 }
 class Account {
-    type            :string; 
-    private client  :number;
-    numberAccount   :number;
-    agency          :string;
-    protected check :number;
+    readonly type       :string; 
+    private client      :number;
+    public numberAccount:number;
+    agency              :string;
+    protected check     :number;
 
     constructor(
         theType         : string,
@@ -38,9 +38,9 @@ class Account {
     };
     withdraw(value: number): number {
         if(value <= this.check) {
-            this.type === 'Checking Account' ?
-                value = taxes.checkAccountTax(value) :
-                value
+           value =  this.type === 'Checking Account' ?
+                taxes.checkAccountTax(value) :
+                taxes.saveAccountTax(value)
             return this.check -= value;
         }
         throw new Error('insufficient funds')
@@ -48,3 +48,8 @@ class Account {
 };
 
 export default Account;
+
+
+
+
+
